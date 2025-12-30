@@ -1,5 +1,7 @@
 USE TheSixthString;
-
+SET FOREIGN_KEY_CHECKS=0;
+TRUNCATE TABLE Bestelregel, Bestelling, Product, Categorie, Klant;
+SET FOREIGN_KEY_CHECKS=1;
 -- Klanten
 INSERT INTO Klant (voornaam, achternaam, email, telefoon, straat, postcode, huisnummer, toevoeging, plaats, wachtwoord_hash, account_status) VALUES
 ('Kenneth', 'Busser', 'kenneth@windesheim.nl', '0612345678', 'Campus', '1234AB', 2, '', 'Zwolle', 'hash', 'actief'),

@@ -1,7 +1,14 @@
 USE TheSixthString;
 SET FOREIGN_KEY_CHECKS=0;
-TRUNCATE TABLE Bestelregel, Bestelling, Product, Categorie, Klant;
-SET FOREIGN_KEY_CHECKS=1;
+SET UNIQUE_CHECKS=0;
+SET SQL_SAFE_UPDATES=0;
+
+-- Force insert ALLES (negeert FK errors)
+INSERT IGNORE INTO Klant ...
+INSERT IGNORE INTO Categorie ...
+INSERT IGNORE INTO Product ...
+INSERT IGNORE INTO Bestelling ...
+INSERT IGNORE INTO Bestelregel ...
 -- Klanten
 INSERT INTO Klant (voornaam, achternaam, email, telefoon, straat, postcode, huisnummer, toevoeging, plaats, wachtwoord_hash, account_status) VALUES
 ('Kenneth', 'Busser', 'kenneth@windesheim.nl', '0612345678', 'Campus', '1234AB', 2, '', 'Zwolle', 'hash', 'actief'),
